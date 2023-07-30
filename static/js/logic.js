@@ -46,9 +46,9 @@ function createFeatures(earthquakeData) {
         return L.circleMarker(latlng, {
             radius: markerSize(feature.properties.mag),
             fillColor: markerColor(feature.geometry.coordinates[2]),
-            color: "#000",
-            weight: 0.3,
-            opacity: 0.5,
+            color: "#001",
+            weight: 0.4,
+            opacity: 0.4,
             fillOpacity: 1
         });
     },
@@ -83,7 +83,7 @@ function createMap(earthquakes) {
   // Create our map, giving it the streetmap and earthquakes layers to display on load.
   let myMap = L.map("map", {
     center: [
-      37.09, -95.71
+      37.00, -95.70
     ],
     zoom: 5,
     layers: [street, earthquakes]
@@ -103,8 +103,6 @@ function createMap(earthquakes) {
     let div = L.DomUtil.create("div", "info legend");
     let depths = [-10,10, 30, 50, 70,90]
     let labels = [];
-
-
 
     legendInfo = "<h1>Earthquake Depths</h1>";
 
